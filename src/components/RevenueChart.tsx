@@ -39,7 +39,7 @@ export function RevenueChart({ companyId, title = "Revenue Trend (Last 90 Days)"
           <YAxis 
             stroke="#94a3b8"
             tick={{ fill: '#94a3b8', fontSize: 12 }}
-            tickFormatter={(value) => `$${(value / 1000).toFixed(0)}k`}
+            tickFormatter={(value: number) => `$${(value / 1000).toFixed(0)}k`}
           />
           <Tooltip
             contentStyle={{
@@ -48,7 +48,7 @@ export function RevenueChart({ companyId, title = "Revenue Trend (Last 90 Days)"
               borderRadius: '8px',
               color: '#fff'
             }}
-            formatter={(value: number) => [formatCurrency(value), 'Revenue']}
+            formatter={(value: number | undefined) => [value ? formatCurrency(value) : '$0', 'Revenue']}
           />
           <Line 
             type="monotone" 
