@@ -58,11 +58,11 @@ function generateCompanies(count: number): Company[] {
     ]) as Company['pricingModel'];
     
     const monthlyUsage = faker.number.int({ min: 1000, max: 1000000 });
-    const currentPrice = faker.number.float({ min: 0.001, max: 0.05, precision: 0.001 });
+    const currentPrice = faker.number.float({ min: 0.001, max: 0.05, fractionDigits: 3 });
     const monthlyRevenue = monthlyUsage * currentPrice;
     
     // Calculate optimal price (simple heuristic)
-    const marketMultiplier = faker.number.float({ min: 1.1, max: 1.8, precision: 0.1 });
+    const marketMultiplier = faker.number.float({ min: 1.1, max: 1.8, fractionDigits: 1 });
     const recommendedPrice = currentPrice * marketMultiplier;
     
     // Revenue leak calculation
@@ -112,7 +112,7 @@ function generateUsageEvents(companies: Company[]): UsageEvent[] {
       date.setDate(date.getDate() - i);
       
       // Add some variance to usage
-      const variance = faker.number.float({ min: 0.7, max: 1.3, precision: 0.01 });
+      const variance = faker.number.float({ min: 0.7, max: 1.3, fractionDigits: 2 });
       const dailyUsage = (company.monthlyUsage / 30) * variance;
       const dailyRevenue = dailyUsage * company.currentPrice;
       
@@ -145,7 +145,7 @@ function generateCompetitorPricing(): CompetitorPricing[] {
     competitor,
     industry: faker.helpers.arrayElement(['LLM API', 'AI Agent', 'Computer Vision']),
     pricingModel: faker.helpers.arrayElement(['usage-based', 'outcome-based', 'hybrid']),
-    pricePerUnit: faker.number.float({ min: 0.002, max: 0.08, precision: 0.001 }),
+    pricePerUnit: faker.number.float({ min: 0.002, max: 0.08, fractionDigits: 3 }),
     marketPosition: faker.helpers.arrayElement(['premium', 'mid-market', 'budget']) as CompetitorPricing['marketPosition']
   }));
 }
