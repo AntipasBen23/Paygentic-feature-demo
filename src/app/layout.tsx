@@ -11,9 +11,9 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "Paygentic PIE - Pricing Intelligence Engine",
-  description: "AI-powered pricing optimization and revenue leak detection for AI-native companies. Built for Paygentic by Antipas Pezos.",
+  description: "AI-powered pricing optimization and revenue leak detection for AI-native companies. Built for Paygentic by Antipas Ben.",
   keywords: ["pricing intelligence", "revenue optimization", "AI billing", "churn prediction", "Paygentic"],
-  authors: [{ name: "Antipas Pezos" }],
+  authors: [{ name: "Antipas Ben" }],
   openGraph: {
     title: "Paygentic PIE - Pricing Intelligence Engine",
     description: "Turn pricing guesswork into data-driven decisions",

@@ -182,7 +182,7 @@ export default function Dashboard() {
       <footer className="border-t border-slate-800 mt-12 py-6">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <p className="text-sm text-slate-500">
-            Built by <span className="text-purple-400 font-semibold">Antipas Pezos</span> • 
+            Built by <span className="text-purple-400 font-semibold">Antipas Ben</span> • 
             Demo for <span className="text-yellow-400 font-semibold">Paygentic</span> • 
             Frontend-only architecture
           </p>
